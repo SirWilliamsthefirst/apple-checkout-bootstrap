@@ -1,0 +1,265 @@
+/* Custom styles on top of Bootstrap – corrected to match design */
+
+:root {
+  --color-dark: #1d1d1f;
+  --color-gray-dark: #4b5563;
+  --color-gray-mid: #6c727f;
+  --color-summary-bg: #e8eaee;
+  --color-input-bg: #f3f4f6;
+  --font: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  font-family: var(--font);
+  background-color: #f0f1f3;
+  color: var(--color-dark);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Header with background */
+.header {
+  background-image: url("resources/background-image.png");
+  background-size: cover;
+  background-position: center top;
+  height: 200px;
+  padding-top: 52px;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.header .badge {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 5px 11px;
+  background-color: var(--color-dark) !important;
+}
+
+/* Checkout card positioning */
+.checkout-wrapper {
+  margin-top: -72px;
+  margin-bottom: 48px;
+  max-width: 1080px;
+  position: relative;
+  z-index: 1;
+}
+
+.checkout-card {
+  box-shadow: 0 8px 30px rgba(17, 23, 41, 0.1) !important;
+  border-radius: 16px !important;
+  overflow: hidden;
+}
+
+/* Summary section */
+.summary {
+  background-color: var(--color-summary-bg);
+}
+
+.product-image {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 8px;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-name {
+  font-size: 1rem;
+  color: var(--color-dark);
+  line-height: 1.3;
+}
+
+.product-color {
+  color: var(--color-gray-mid);
+  margin-top: 2px;
+}
+
+.product-price {
+  font-size: 1rem;
+  color: var(--color-dark);
+  white-space: nowrap;
+}
+
+.product-qty {
+  color: var(--color-gray-mid);
+}
+
+.remove-btn {
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+
+.remove-btn:hover {
+  opacity: 1;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #c5c9d1;
+  opacity: 1;
+  margin: 28px 0 22px;
+}
+
+/* Coupon – keep side-by-side on all sizes */
+.coupon-input {
+  height: 48px;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background-color: #fff;
+}
+
+.coupon-input:focus {
+  border-color: var(--color-dark);
+  box-shadow: none;
+}
+
+.coupon-btn {
+  height: 48px;
+  border-radius: 8px;
+  background-color: var(--color-dark);
+  border-color: var(--color-dark);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.coupon-btn:hover {
+  background-color: #333;
+  border-color: #333;
+}
+
+/* Totals */
+.total-row {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-gray-dark);
+}
+
+.total-final {
+  font-size: 1rem;
+  color: var(--color-dark);
+}
+
+/* Contact form */
+.contact-title {
+  color: var(--color-dark);
+}
+
+.form-label {
+  color: var(--color-dark);
+  margin-bottom: 0.5rem;
+}
+
+.custom-input {
+  height: 48px;
+  background-color: var(--color-input-bg);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  padding: 0 16px;
+}
+
+.custom-input:focus {
+  background-color: #fff;
+  border-color: var(--color-dark);
+  box-shadow: none;
+}
+
+.form-select.custom-input {
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+.continue-btn {
+  height: 52px;
+  border-radius: 8px;
+  background-color: var(--color-dark);
+  border-color: var(--color-dark);
+  font-size: 1rem;
+}
+
+.continue-btn:hover {
+  background-color: #333;
+  border-color: #333;
+}
+
+/* Footer */
+.author-info {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.author-info a {
+  color: var(--color-dark);
+}
+
+/* Responsive – stack sections below lg, but keep form rows horizontal */
+@media (max-width: 991.98px) {
+  .checkout-wrapper {
+    margin-top: -56px;
+    max-width: 480px;
+  }
+
+  .header {
+    height: 170px;
+    padding-top: 44px;
+  }
+
+  .product-image {
+    width: 72px;
+    height: 72px;
+  }
+}
+
+@media (max-width: 420px) {
+  .header {
+    height: 150px;
+    padding-top: 40px;
+  }
+
+  .header h1 {
+    font-size: 1.375rem;
+  }
+
+  .checkout-wrapper {
+    margin-top: -48px;
+    margin-bottom: 32px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .product-image {
+    width: 64px;
+    height: 64px;
+    padding: 6px;
+  }
+
+  .product-name,
+  .product-price {
+    font-size: 0.9375rem;
+  }
+
+  .coupon-btn {
+    padding-left: 14px;
+    padding-right: 14px;
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .checkout-wrapper {
+    max-width: 1120px;
+  }
+}
